@@ -65,7 +65,7 @@ function DeleteVehicle(veh)
 end
 
 
-function DrawCustomMarker(sprite, pos, bobUp, scale, rotate, directionX, directionY, directionZ, 
+function DrawCustomMarker(sprite, pos, bobUp, scale, rotate, rotateToUser, directionX, directionY, directionZ, 
     rotX, rotY, rotZ, red, green, blue , alpha)
     sprite = sprite or 2
     scale = scale or 1.3
@@ -81,10 +81,11 @@ function DrawCustomMarker(sprite, pos, bobUp, scale, rotate, directionX, directi
     blue = blue or 0
     alpha = alpha or 200
     rotate = rotate or false
+    rotateToUser = rotateToUser or false
     DrawMarker(sprite, pos.x, pos.y, pos.z, directionX, directionY, directionZ, 
         rotX, rotY, rotZ, scale, scale, scale, 
         red, green, blue, alpha, 
-        bobUp, false, 2, rotate, nil, nil, false)
+        bobUp, rotateToUser, 2, rotate, nil, nil, false)
 end
 
 function ResetSkin()
