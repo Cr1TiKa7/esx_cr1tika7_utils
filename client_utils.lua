@@ -49,9 +49,9 @@ function CreateSmallBlip(pos, sprite, color)
     return blip
 end
 
-function IsTrailerAttached()
+function IsTrailerAttached(veh)
     local chk,trailer = GetVehicleTrailerVehicle(GetVehiclePedIsUsing(PlayerPedId()))
-    return trailer == trailerVeh
+    return trailer == veh
 end
 
 function IsPedInCar(veh)
@@ -65,7 +65,9 @@ function DeleteVehicle(veh)
 end
 
 
-function DrawCustomMarker(sprite, pos, bobUp, scale, rotate, rotateToUser, directionX, directionY, directionZ, 
+function DrawCustomMarker(sprite, pos, bobUp, scale, 
+    rotate, rotateToUser, directionX, directionY, 
+    directionZ, 
     rotX, rotY, rotZ, red, green, blue , alpha)
     sprite = sprite or 2
     scale = scale or 1.3
